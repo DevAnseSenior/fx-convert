@@ -43,4 +43,4 @@ async def async_converter(from_currency: str, to_currency: str, value: float):
 
     exchange_rate = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
-    return value * exchange_rate
+    return {to_currency: value * exchange_rate}
