@@ -1,9 +1,7 @@
 import re
 
 from pydantic import BaseModel, Field, field_validator
-from typing import List, Any
-
-from typing_extensions import Self
+from typing import List
 
 
 class ConverterInput(BaseModel):
@@ -17,3 +15,7 @@ class ConverterInput(BaseModel):
                 raise ValueError(f'Invalid currency {currency}')
         return value
 
+
+class ConverterOutput(BaseModel):
+    message: str
+    data: List[dict]
